@@ -69,6 +69,12 @@ class template
 	private static $rightLangvarDelimiter = '\ \)\}';
 
 	/**
+	 * Delimiters for language variables.
+	 */
+	private static $leftResvarDelimiter = '\{\|\ ';
+	private static $rightResvarDelimiter = '\ \|\}';
+
+	/**
 	 * File name and content of the template.
 	 */
 	private static $templateFile = false;
@@ -187,6 +193,39 @@ class template
 	}
 
 	/**
+	 * Replace language variables.
+	 */
+	private static function replace_reserved_variables () {
+
+		while (preg_match("/" . self::$leftResvarDelimiter . "REQUEST\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", self::$templateContent)) {
+			self::$templateContent = preg_replace("/" . self::$leftResvarDelimiter . "REQUEST\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", "\$_REQUEST['\\1']", self::$templateContent);
+		}
+
+		while (preg_match("/" . self::$leftResvarDelimiter . "GET\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", self::$templateContent)) {
+			self::$templateContent = preg_replace("/" . self::$leftResvarDelimiter . "GET\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", "\$_GET['\\1']", self::$templateContent);
+		}
+
+		while (preg_match("/" . self::$leftResvarDelimiter . "POST\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", self::$templateContent)) {
+			self::$templateContent = preg_replace("/" . self::$leftResvarDelimiter . "POST\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", "\$_POST['\\1']", self::$templateContent);
+		}
+
+		while (preg_match("/" . self::$leftResvarDelimiter . "SERVER\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", self::$templateContent)) {
+			self::$templateContent = preg_replace("/" . self::$leftResvarDelimiter . "SERVER\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", "\$_SERVER['\\1']", self::$templateContent);
+		}
+
+		while (preg_match("/" . self::$leftResvarDelimiter . "SESSION\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", self::$templateContent)) {
+			self::$templateContent = preg_replace("/" . self::$leftResvarDelimiter . "SESSION\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", "\$_SESSION['\\1']", self::$templateContent);
+		}
+
+		while (preg_match("/" . self::$leftResvarDelimiter . "COOKIE\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", self::$templateContent)) {
+			self::$templateContent = preg_replace("/" . self::$leftResvarDelimiter . "COOKIE\-\>(.*)" . self::$rightResvarDelimiter . "/isUe", "\$_COOKIE['\\1']", self::$templateContent);
+		}
+
+		return;
+
+	}
+
+	/**
 	 * Parse functions, delete comments and replace language variables.
 	 */
 	private static function parse_functions () {
@@ -211,16 +250,27 @@ class template
 		 */
 		self::replace_language_variables();
 
+		/**
+		 * Replace REQUEST, GET, POST, SERVER, SESSION and COOKIE variables.
+		 */
+		self::replace_reserved_variables();
+
 		return;
 
 	}
 
 	/**
+	 * @param string	$eval
+	 *
 	 * Output template.
 	 */
-	public static function display () {
+	public static function display ($eval = false) {
 
-		echo self::$templateContent;
+		if ($eval === true) {
+			eval(' ?>' . self::$templateContent . '<?php ');
+		} else {
+			echo self::$templateContent;
+		}
 
 		return;
 
