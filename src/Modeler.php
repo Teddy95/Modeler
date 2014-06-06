@@ -84,6 +84,11 @@ class template
 	/**
 	 * @param string	$templateDirectory
 	 * @param string	$languageDirectory
+	 *
+	 * @access public
+	 *
+	 * @uses			$templateDirectory
+	 * @uses			$languageDirectory
 	 */
 	public function __construct ($templateDirectory = false, $languageDirectory = false) {
 
@@ -104,6 +109,10 @@ class template
 
 	/**
 	 * @param string	$templateDirectory
+	 *
+	 * @access public
+	 *
+	 * @uses			$templateDirectory
 	 */
 	public static function set_template_directory ($templateDirectory) {
 
@@ -119,6 +128,10 @@ class template
 
 	/**
 	 * @param string	$languageDirectory
+	 *
+	 * @access public
+	 *
+	 * @uses			$languageDirectory
 	 */
 	public static function set_language_directory ($languageDirectory) {
 
@@ -134,6 +147,12 @@ class template
 
 	/**
 	 * @param string	$templateFile
+	 *
+	 * @access public
+	 *
+	 * @uses			$templateFile
+	 * @uses			$templateName
+	 * @uses			$templateContent
 	 *
 	 * @return bool		Returns FALSE on failure
 	 */
@@ -161,6 +180,12 @@ class template
 	/**
 	 * @param string	$name
 	 * @param string	$replacement
+	 *
+	 * @access public
+	 *
+	 * @uses			$leftDelimiter
+	 * @uses			$rightDelimiter
+	 * @uses			$templateContent
 	 */
 	public static function assign ($name, $replacement) {
 
@@ -171,7 +196,12 @@ class template
 	}
 
 	/**
-	 * Replace language variables.
+	 * @access private
+	 *
+	 * @uses			$languageDirectory
+	 * @uses			$leftLangvarDelimiter
+	 * @uses			$rightLangvarDelimiter
+	 * @uses			$templateContent
 	 */
 	private static function replace_language_variables () {
 
@@ -194,7 +224,11 @@ class template
 	}
 
 	/**
-	 * Replace reserved variables.
+	 * @access private
+	 *
+	 * @uses			$leftResvarDelimiter
+	 * @uses			$rightResvarDelimiter
+	 * @uses			$templateContent
 	 */
 	private static function replace_reserved_variables () {
 
@@ -227,7 +261,12 @@ class template
 	}
 
 	/**
-	 * Parse functions, delete comments and replace language variables.
+	 * @access private
+	 *
+	 * @uses			$templateDirectory
+	 * @uses			$leftFunctionDelimiter
+	 * @uses			$rightFunctionDelimiter
+	 * @uses			$templateContent
 	 */
 	private static function parse_functions () {
 
@@ -263,7 +302,9 @@ class template
 	/**
 	 * @param string	$eval
 	 *
-	 * Output template.
+	 * @access public
+	 *
+	 * @uses			$templateContent
 	 */
 	public static function display ($eval = false) {
 
