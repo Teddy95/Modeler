@@ -176,6 +176,7 @@ class template
 	private static function replace_language_variables () {
 
 		$languageDirectory = self::$languageDirectory;
+
 		while (preg_match("/" . self::$leftLangvarDelimiter . "(.*)\.(.*)" . self::$rightLangvarDelimiter . "/isUe", self::$templateContent, $matches)) {
 			$language = json_decode(file_get_contents($languageDirectory . $matches[1] . '.json'), true);
 			$langPieces = explode('.', $matches[2]);
@@ -233,9 +234,9 @@ class template
 		/**
 		 * Parse functions.
 		 */
+		$templateDirectory = self::$templateDirectory;
 		
 		// Includes
-		$templateDirectory = self::$templateDirectory;
 		while (preg_match("/" . self::$leftFunctionDelimiter . "include file=\"(.*)\.(.*)\"" . self::$rightFunctionDelimiter . "/isUe", self::$templateContent)) {
 			self::$templateContent = preg_replace("/" . self::$leftFunctionDelimiter . "include file=\"(.*)\.(.*)\"" . self::$rightFunctionDelimiter . "/isUe", "file_get_contents(\$templateDirectory . '\\1' . '.' . '\\2')", self::$templateContent);
 		}
