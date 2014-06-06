@@ -69,7 +69,7 @@ class template
 	private static $rightLangvarDelimiter = '\ \)\}';
 
 	/**
-	 * Delimiters for language variables.
+	 * Delimiters for reserved variables.
 	 */
 	private static $leftResvarDelimiter = '\{\|\ ';
 	private static $rightResvarDelimiter = '\ \|\}';
@@ -194,7 +194,7 @@ class template
 	}
 
 	/**
-	 * Replace language variables.
+	 * Replace reserved variables.
 	 */
 	private static function replace_reserved_variables () {
 
