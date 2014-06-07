@@ -153,6 +153,7 @@ class template
 	 * @uses			$templateFile
 	 * @uses			$templateName
 	 * @uses			$templateContent
+	 * @uses			parse_functions()
 	 *
 	 * @return bool		Returns FALSE on failure
 	 */
@@ -267,6 +268,8 @@ class template
 	 * @uses			$leftFunctionDelimiter
 	 * @uses			$rightFunctionDelimiter
 	 * @uses			$templateContent
+	 * @uses			replace_language_variables()
+	 * @uses			replace_reserved_variables()
 	 */
 	private static function parse_functions () {
 
