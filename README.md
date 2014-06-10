@@ -19,7 +19,7 @@ Inlude Modeler.php and create the Modeler object:
 	include('Modeler/Modeler.php');
 	
 	$Modeler = new Teddy95\Modeler\template('../templateDirectory', '../languageDirectory/en-us');
-	$Modeler->load_template('../index.html');
+	$Modeler->load_template('../template.html');
 	
 	$Modeler->assign('title', 'Modeler template engine');
 	$Modeler->assign('name', 'John Doe');
@@ -28,7 +28,7 @@ Inlude Modeler.php and create the Modeler object:
 ?>
 ```
 
-Template file `index.html`:
+Template file `template.html`:
 
 ```html
 <html>
@@ -36,9 +36,15 @@ Template file `index.html`:
         <title>{{ title }}</title>
     </head>
     <body>
-        <p>My name is {{ name }}<p>
+        <p>My name is {{ name }}!<p>
     </body>
 </html>
+```
+
+Output:
+
+```
+My Name is John Doe!
 ```
 
 -------------
