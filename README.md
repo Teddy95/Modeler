@@ -13,6 +13,8 @@
 - Use language variables in json files
 - Build fast and easy templates
 
+-------------
+
 ### Installation
 
 Inlude Modeler.php and create the Modeler object:
