@@ -2,9 +2,8 @@
 
 <p align="center">
 	<img src="http://root.andre-sieverding.de/briefkasten/GithubRepoLogos/Modeler.png" alt="">
+	<p>Modeler is a great php template engine.</p>
 </p>
-
-Modeler is a great php template engine.
 
 - Define variables and include templates
 - Use language variables in json files
