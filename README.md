@@ -5,6 +5,10 @@
 	<p align="center">Modeler is a great php template engine.</p>
 </p>
 
+-------------
+
+### Benefits
+
 - Define variables and include templates
 - Use language variables in json files
 - Build fast and easy templates
