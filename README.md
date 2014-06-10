@@ -1,7 +1,7 @@
 # Modeler
 
 <p align="center">
-	<img src="http://i.imgur.com/TB2mpvf.png" alt="">
+	<img src="http://root.andre-sieverding.de/briefkasten/GithubRepoLogos/Modeler.png" alt="">
 </p>
 
 Modeler is a great php template engine.
