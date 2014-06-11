@@ -26,7 +26,7 @@
  * SOFTWARE.
  */
 
-namespace Teddy95\Modeler;
+namespace Modeler;
 
 /**
  * Template class
