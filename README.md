@@ -23,7 +23,7 @@ Inlude Modeler.php and create the Modeler object:
 <?php
 	include('Modeler/Modeler.php');
 	
-	$Modeler = new Modeler\class('../templateDirectory', '../languageDirectory/en-us');
+	$Modeler = new Modeler\lib('../templateDirectory', '../languageDirectory/en-us');
 	$Modeler->load_template('../template.html');
 	
 	$Modeler->assign('title', 'Modeler template engine');
