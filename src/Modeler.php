@@ -31,7 +31,7 @@ namespace Modeler;
 /**
  * Template class
  */
-class class
+class lib
 {
 
 	/**
