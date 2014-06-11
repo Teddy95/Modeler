@@ -23,7 +23,7 @@ Inlude Modeler.php and create the Modeler object:
 <?php
 	include('Modeler/Modeler.php');
 	
-	$Modeler = new Teddy95\Modeler\template('../templateDirectory', '../languageDirectory/en-us');
+	$Modeler = new Modeler\template('../templateDirectory', '../languageDirectory/en-us');
 	$Modeler->load_template('../template.html');
 	
 	$Modeler->assign('title', 'Modeler template engine');
@@ -63,7 +63,7 @@ My Name is John Doe!
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Modeler/releases)
-- **[Download latest version from Github](https://github.com/Teddy95/Modeler/archive/v0.1.0.zip)**
+- **[Download latest version from Github](https://github.com/Teddy95/Modeler/archive/v0.2.0.zip)**
 - [Download master from Github](https://github.com/Teddy95/Modeler/archive/master.zip)
 
 -------------
