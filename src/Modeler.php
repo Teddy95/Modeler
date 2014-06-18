@@ -217,7 +217,8 @@ class main
 				$langvar .= "[" . $langPieces[$i] . "]";
 			}
 
-			self::$templateContent = preg_replace("/" . self::$leftLangvarDelimiter . "(.*)\.(.*)" . self::$rightLangvarDelimiter . "/isUe", "\\" . $langvar, self::$templateContent);
+			self::$templateContent = str_replace($matches[0], "{(( -==- ))}", self::$templateContent);
+			self::$templateContent = preg_replace("/\{\(\(\ \-\=(.*)\=\-\ \)\)\}/isUe", "\\" . $langvar, self::$templateContent);
 		}
 
 		return;
