@@ -89,6 +89,8 @@ class main
 	 *
 	 * @uses			$templateDirectory
 	 * @uses			$languageDirectory
+	 *
+	 * @return void
 	 */
 	public function __construct ($templateDirectory = false, $languageDirectory = false) {
 
@@ -113,6 +115,8 @@ class main
 	 * @access public
 	 *
 	 * @uses			$templateDirectory
+	 *
+	 * @return void
 	 */
 	public static function set_template_directory ($templateDirectory) {
 
@@ -132,6 +136,8 @@ class main
 	 * @access public
 	 *
 	 * @uses			$languageDirectory
+	 *
+	 * @return void
 	 */
 	public static function set_language_directory ($languageDirectory) {
 
@@ -187,6 +193,8 @@ class main
 	 * @uses			$leftDelimiter
 	 * @uses			$rightDelimiter
 	 * @uses			$templateContent
+	 *
+	 * @return void
 	 */
 	public static function assign ($name, $replacement) {
 
@@ -203,6 +211,8 @@ class main
 	 * @uses			$leftLangvarDelimiter
 	 * @uses			$rightLangvarDelimiter
 	 * @uses			$templateContent
+	 *
+	 * @return void
 	 */
 	private static function replace_language_variables () {
 
@@ -231,6 +241,8 @@ class main
 	 * @uses			$leftResvarDelimiter
 	 * @uses			$rightResvarDelimiter
 	 * @uses			$templateContent
+	 *
+	 * @return void
 	 */
 	private static function replace_reserved_variables () {
 
@@ -271,6 +283,8 @@ class main
 	 * @uses			$templateContent
 	 * @uses			replace_language_variables()
 	 * @uses			replace_reserved_variables()
+	 *
+	 * @return void
 	 */
 	private static function parse_functions () {
 
@@ -309,6 +323,8 @@ class main
 	 * @access public
 	 *
 	 * @uses			$templateContent
+	 *
+	 * @return void
 	 */
 	public static function display ($eval = false) {
 
