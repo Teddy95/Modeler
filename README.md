@@ -63,7 +63,7 @@ My Name is John Doe!
 ### Download
 
 - [Releases on Github](https://github.com/Teddy95/Modeler/releases)
-- **[Download latest version from Github](https://github.com/Teddy95/Modeler/archive/v0.2.1.zip)**
+- **[Download latest version from Github](https://github.com/Teddy95/Modeler/archive/v0.2.2.zip)**
 - [Download master from Github](https://github.com/Teddy95/Modeler/archive/master.zip)
 
 -------------
