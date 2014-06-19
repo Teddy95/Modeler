@@ -82,6 +82,11 @@ class main
 	private static $templateContent = false;
 
 	/**
+	 * Parameters for functions.
+	 */
+	private static $assignBefore = false;
+
+	/**
 	 * @param string	$templateDirectory
 	 * @param string	$languageDirectory
 	 *
@@ -178,7 +183,40 @@ class main
 			return false;
 		}
 
+		if (self::$assignBefore !== false && is_array(self::$assignBefore) === true) {
+			foreach (self::$assignBefore as $assign) {
+				self::$templateContent = str_replace($assign['search'], $assign['replace'], self::$templateContent);
+			}
+		}
+
 		self::parse_functions();
+
+		return;
+
+	}
+
+	/**
+	 * @param string	$name
+	 * @param string	$replacement
+	 *
+	 * @access public
+	 *
+	 * @uses			$leftDelimiter
+	 * @uses			$rightDelimiter
+	 * @uses			$templateContent
+	 *
+	 * @return void
+	 */
+	public static function assign_before ($name, $replacement) {
+
+		if (self::$assignBefore === false) {
+			self::$assignBefore = array();
+		}
+
+		self::$assignBefore[] = array(
+			'search' => self::$leftDelimiter . $name . self::$rightDelimiter,
+			'replace' => $replacement
+		);
 
 		return;
 
