@@ -79,7 +79,7 @@ class main
 	 */
 	private static $templateFile = false;
 	private static $templateName = false;
-	private static $templateContent = false;
+	public static $templateContent = false;
 
 	/**
 	 * Parameters for functions.
