@@ -79,7 +79,7 @@ class main
 	 */
 	private static $templateFile = false;
 	private static $templateName = false;
-	public static $templateContent = false;
+	private static $templateContent = false;
 
 	/**
 	 * Parameters for functions.
@@ -92,8 +92,8 @@ class main
 	 *
 	 * @access public
 	 *
-	 * @uses			$templateDirectory
-	 * @uses			$languageDirectory
+	 * @uses		$templateDirectory
+	 * @uses		$languageDirectory
 	 *
 	 * @return void
 	 */
@@ -119,7 +119,7 @@ class main
 	 *
 	 * @access public
 	 *
-	 * @uses			$templateDirectory
+	 * @uses		$templateDirectory
 	 *
 	 * @return void
 	 */
@@ -140,7 +140,7 @@ class main
 	 *
 	 * @access public
 	 *
-	 * @uses			$languageDirectory
+	 * @uses		$languageDirectory
 	 *
 	 * @return void
 	 */
@@ -161,10 +161,10 @@ class main
 	 *
 	 * @access public
 	 *
-	 * @uses			$templateFile
-	 * @uses			$templateName
-	 * @uses			$templateContent
-	 * @uses			parse_functions()
+	 * @uses		$templateFile
+	 * @uses		$templateName
+	 * @uses		$templateContent
+	 * @uses		parse_functions()
 	 *
 	 * @return bool		Returns FALSE on failure
 	 */
@@ -201,9 +201,9 @@ class main
 	 *
 	 * @access public
 	 *
-	 * @uses			$leftDelimiter
-	 * @uses			$rightDelimiter
-	 * @uses			$templateContent
+	 * @uses		$leftDelimiter
+	 * @uses		$rightDelimiter
+	 * @uses		$templateContent
 	 *
 	 * @return void
 	 */
@@ -228,9 +228,9 @@ class main
 	 *
 	 * @access public
 	 *
-	 * @uses			$leftDelimiter
-	 * @uses			$rightDelimiter
-	 * @uses			$templateContent
+	 * @uses		$leftDelimiter
+	 * @uses		$rightDelimiter
+	 * @uses		$templateContent
 	 *
 	 * @return void
 	 */
@@ -245,10 +245,10 @@ class main
 	/**
 	 * @access private
 	 *
-	 * @uses			$languageDirectory
-	 * @uses			$leftLangvarDelimiter
-	 * @uses			$rightLangvarDelimiter
-	 * @uses			$templateContent
+	 * @uses		$languageDirectory
+	 * @uses		$leftLangvarDelimiter
+	 * @uses		$rightLangvarDelimiter
+	 * @uses		$templateContent
 	 *
 	 * @return void
 	 */
@@ -276,9 +276,9 @@ class main
 	/**
 	 * @access private
 	 *
-	 * @uses			$leftResvarDelimiter
-	 * @uses			$rightResvarDelimiter
-	 * @uses			$templateContent
+	 * @uses		$leftResvarDelimiter
+	 * @uses		$rightResvarDelimiter
+	 * @uses		$templateContent
 	 *
 	 * @return void
 	 */
@@ -315,12 +315,12 @@ class main
 	/**
 	 * @access private
 	 *
-	 * @uses			$templateDirectory
-	 * @uses			$leftFunctionDelimiter
-	 * @uses			$rightFunctionDelimiter
-	 * @uses			$templateContent
-	 * @uses			replace_language_variables()
-	 * @uses			replace_reserved_variables()
+	 * @uses		$templateDirectory
+	 * @uses		$leftFunctionDelimiter
+	 * @uses		$rightFunctionDelimiter
+	 * @uses		$templateContent
+	 * @uses		replace_language_variables()
+	 * @uses		replace_reserved_variables()
 	 *
 	 * @return void
 	 */
@@ -360,7 +360,7 @@ class main
 	 *
 	 * @access public
 	 *
-	 * @uses			$templateContent
+	 * @uses		$templateContent
 	 *
 	 * @return void
 	 */
